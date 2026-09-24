@@ -577,86 +577,172 @@ footer {
   </div>
 </section>
 
-<section id="career">
+<section id="career" class="section">
   <div class="container">
 
-    <h2 class="section-title">Career Center</h2>
+    <div class="section-title">
+      <h2>Career Center</h2>
+      <p>Your professional profile and application workspace.</p>
+    </div>
 
-    <p class="section-description">
-      Use this area to prepare applications for employment and freelance
-      opportunities. The current version stores your information locally
-      in your browser.
-    </p>
+    <!-- MASTER PROFILE -->
+    <div class="career-card">
 
-    <div class="career">
+      <h3>My Professional Profile</h3>
 
-      <div class="tool-card">
-        <h3>My Professional Profile</h3>
+      <label>Full Name</label>
+      <input
+        type="text"
+        id="profileName"
+        value="Estifanos Fikadu"
+      >
 
-        <p>
-          Save your LinkedIn profile so it is ready when preparing
-          applications.
-        </p>
+      <label>Professional Title</label>
+      <input
+        type="text"
+        id="profileTitle"
+        value="Full-Stack Developer & AI Automation Specialist"
+      >
 
-        <input
-          id="linkedin"
-          type="url"
-          value="https://www.linkedin.com/in/estefanos-gizaw-699509335"
-          placeholder="LinkedIn profile URL">
+      <label>Email</label>
+      <input
+        type="email"
+        id="profileEmail"
+        value="estefanosfikadu7@gmail.com"
+      >
 
-        <button class="btn primary" onclick="saveLinkedIn()">
-          Save Profile
+      <label>WhatsApp</label>
+      <input
+        type="text"
+        id="profileWhatsapp"
+        value="+251 948 109 576"
+      >
+
+      <label>LinkedIn</label>
+      <input
+        type="url"
+        id="profileLinkedIn"
+        value="https://www.linkedin.com/in/estefanos-gizaw-699509335"
+      >
+
+      <label>GitHub</label>
+      <input
+        type="url"
+        id="profileGithub"
+        value="https://github.com/estif75"
+      >
+
+      <label>Education</label>
+      <textarea id="profileEducation">Admas University
+Accounting and Finance
+Graduated 2019</textarea>
+
+      <label>Professional Summary</label>
+      <textarea id="profileSummary">Full-Stack Developer and AI Automation Specialist focused on building modern web applications, AI agents, automation systems, APIs, databases and practical digital solutions.</textarea>
+
+      <label>Technical Skills</label>
+      <textarea id="profileSkills">JavaScript, TypeScript, React, Next.js, Vue, HTML, CSS, Tailwind CSS, Node.js, REST APIs, GraphQL, Python, SQL, PostgreSQL, Supabase, AI/LLM, AI Agents, Machine Learning, Figma, UI/UX, Docker, AWS, GCP, GitHub, CI/CD, Automation</textarea>
+
+      <label>Projects & Experience</label>
+      <textarea id="profileExperience">AI Outreach Automation
+AI Career Assistant
+Full-Stack Web Applications
+Database & Backend Systems
+Business Automation
+Professional Portfolio Platform</textarea>
+
+      <button class="btn primary" onclick="saveProfile()">
+        Save Professional Profile
+      </button>
+
+      <p id="profileStatus"></p>
+
+    </div>
+
+
+    <!-- JOB ANALYZER -->
+    <div class="career-card" style="margin-top:30px;">
+
+      <h3>Job Application Analyzer</h3>
+
+      <p>
+        Paste a job description to prepare a tailored application.
+      </p>
+
+      <label>Job Description</label>
+
+      <textarea
+        id="jobDescription"
+        placeholder="Paste the complete job description here..."
+        style="min-height:250px;"
+      ></textarea>
+
+      <div class="buttons" style="margin-top:20px;">
+
+        <button class="btn primary" onclick="analyzeJob()">
+          Analyze Job
         </button>
 
-        <div id="linkedinStatus" class="status"></div>
+        <button class="btn" onclick="clearJob()">
+          Clear
+        </button>
+
       </div>
 
-      <div class="tool-card">
-        <h3>Job Description</h3>
+      <div
+        id="jobAnalysis"
+        style="margin-top:30px;"
+      >
 
-        <p>
-          Paste a job description here. This will become the input for
-          the future AI job-matching and application system.
-        </p>
+        <h3>Analysis Results</h3>
 
-        <textarea
-          id="jobDescription"
-          placeholder="Paste the job description here..."></textarea>
+        <div id="jobResult">
+          Paste a job description and select
+          "Analyze Job" to begin.
+        </div>
 
-        <button class="btn primary" onclick="saveJob()">
-          Save Job
-        </button>
-
-        <div id="jobStatus" class="status"></div>
       </div>
 
     </div>
 
-    <div class="card" style="margin-top:25px;">
-      <h3>Planned AI Career Tools</h3>
 
-      <br>
+    <!-- APPLICATION OUTPUTS -->
+    <div class="career-card" style="margin-top:30px;">
 
-      <p>
-        The next development stage will add:
-      </p>
+      <h3>Application Materials</h3>
 
-      <br>
+      <div id="applicationMaterials">
 
-      <ul style="padding-left:20px; color:#aeb7c8;">
-        <li>Job description analysis</li>
+        <p>
+          Your tailored application materials will appear here
+          after the job analysis.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- FUTURE TOOLS -->
+    <div class="career-card" style="margin-top:30px;">
+
+      <h3>Career Tools</h3>
+
+      <ul>
+        <li>Job requirement analysis</li>
         <li>Skill-to-job matching</li>
         <li>Tailored CV generation</li>
-        <li>Customized cover letter generation</li>
+        <li>Customized cover letter</li>
         <li>Freelance proposal generation</li>
-        <li>Application preparation</li>
+        <li>Recruiter message generation</li>
+        <li>Interview preparation</li>
         <li>Application tracking</li>
       </ul>
+
     </div>
 
   </div>
 </section>
-
 <section id="contact">
   <div class="container">
 
