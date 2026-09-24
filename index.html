@@ -1,1004 +1,736 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Estifanos Fikadu | Full-Stack Developer & AI Specialist</title>
-
-    <meta
-        name="description"
-        content="Estifanos Fikadu — Full-Stack Developer, AI Automation Specialist and technology freelancer."
-    >
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #080808;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        /* NAVIGATION */
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(8, 8, 8, 0.94);
-            border-bottom: 1px solid #222;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-        .logo span {
-            color: #8b5cf6;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #aaa;
-            transition: 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: white;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-            background:
-                radial-gradient(
-                    circle at 80% 20%,
-                    rgba(124, 58, 237, 0.22),
-                    transparent 35%
-                );
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .eyebrow {
-            color: #a78bfa;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: clamp(42px, 7vw, 80px);
-            line-height: 1;
-            letter-spacing: -3px;
-            margin-bottom: 25px;
-        }
-
-        h1 span {
-            color: #8b5cf6;
-        }
-
-        .hero-description {
-            color: #aaa;
-            font-size: 18px;
-            max-width: 650px;
-            margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .button {
-            padding: 13px 20px;
-            border-radius: 8px;
-            border: 1px solid #333;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .button-primary {
-            background: #7c3aed;
-            border-color: #7c3aed;
-        }
-
-        .button-primary:hover {
-            background: #6d28d9;
-        }
-
-        .button-secondary {
-            background: #151515;
-        }
-
-        .button-secondary:hover {
-            background: #222;
-        }
-
-        .profile-card {
-            background: #111;
-            border: 1px solid #292929;
-            border-radius: 20px;
-            padding: 35px;
-        }
-
-        .avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #7c3aed, #2563eb);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .profile-card h2 {
-            margin-bottom: 5px;
-        }
-
-        .profile-card p {
-            color: #999;
-        }
-
-        .available {
-            margin-top: 25px;
-            background: #181818;
-            padding: 12px;
-            border-radius: 8px;
-            color: #aaa;
-            font-size: 14px;
-        }
-
-        .dot {
-            width: 8px;
-            height: 8px;
-            display: inline-block;
-            border-radius: 50%;
-            background: #22c55e;
-            margin-right: 7px;
-        }
-
-        /* SECTIONS */
-
-        section {
-            padding: 100px 0;
-            border-top: 1px solid #181818;
-        }
-
-        .section-title {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-
-        .section-description {
-            color: #999;
-            max-width: 700px;
-            margin-bottom: 40px;
-        }
-
-        /* ABOUT */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .about-text {
-            color: #aaa;
-            font-size: 17px;
-        }
-
-        .about-text p {
-            margin-bottom: 18px;
-        }
-
-        .facts {
-            display: grid;
-            gap: 15px;
-        }
-
-        .fact {
-            background: #111;
-            border: 1px solid #292929;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .fact span {
-            display: block;
-            color: #999;
-            margin-top: 5px;
-        }
-
-        /* SKILLS */
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill {
-            background: #151515;
-            border: 1px solid #292929;
-            padding: 9px 14px;
-            border-radius: 7px;
-            color: #ccc;
-        }
-
-        /* PROJECTS */
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .project {
-            background: #111;
-            border: 1px solid #292929;
-            padding: 25px;
-            border-radius: 15px;
-        }
-
-        .project-number {
-            color: #8b5cf6;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .project h3 {
-            margin-bottom: 10px;
-        }
-
-        .project p {
-            color: #999;
-        }
-
-        /* CAREER */
-
-        .career-box {
-            background: linear-gradient(
-                135deg,
-                #111,
-                #1a1325
-            );
-            border: 1px solid #34204f;
-            border-radius: 20px;
-            padding: 40px;
-        }
-
-        .career-box p {
-            color: #aaa;
-            max-width: 750px;
-            margin: 15px 0 25px;
-        }
-
-        /* CAREER TOOLS */
-
-        .tools {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .tool {
-            background: #111;
-            border: 1px solid #292929;
-            border-radius: 15px;
-            padding: 28px;
-        }
-
-        .tool h3 {
-            margin-bottom: 10px;
-        }
-
-        .tool p {
-            color: #999;
-            margin-bottom: 20px;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            background: #080808;
-            color: white;
-            border: 1px solid #333;
-            padding: 13px;
-            border-radius: 8px;
-            margin-bottom: 12px;
-            outline: none;
-        }
-
-        input:focus,
-        textarea:focus {
-            border-color: #7c3aed;
-        }
-
-        textarea {
-            min-height: 160px;
-            resize: vertical;
-        }
-
-        .status {
-            margin-top: 15px;
-            color: #4ade80;
-            font-size: 14px;
-        }
-
-        /* CONTACT */
-
-        .contact {
-            text-align: center;
-        }
-
-        .contact p {
-            color: #999;
-            margin-bottom: 25px;
-        }
-
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            padding: 30px;
-            text-align: center;
-            border-top: 1px solid #222;
-            color: #777;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 850px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero-grid,
-            .about-grid,
-            .tools {
-                grid-template-columns: 1fr;
-            }
-
-            .projects {
-                grid-template-columns: 1fr;
-            }
-
-            h1 {
-                font-size: 50px;
-                letter-spacing: -2px;
-            }
-
-            .profile-card {
-                max-width: 500px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estifanos Fikadu | Full-Stack Developer & AI Automation Specialist</title>
+<meta name="description" content="Estifanos Fikadu — Full-Stack Developer and AI Automation Specialist building web applications, AI agents, automation systems and digital products.">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0f19;
+  color: #f5f7fb;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(11,15,25,.95);
+  border-bottom: 1px solid #202738;
+  backdrop-filter: blur(10px);
+}
+
+.nav-inner {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.logo span {
+  color: #6ea8fe;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #c5ccda;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.hero {
+  padding: 110px 0 90px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 7px 14px;
+  border: 1px solid #30394e;
+  border-radius: 30px;
+  color: #aeb9cc;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #6ea8fe;
+}
+
+.hero p {
+  max-width: 720px;
+  margin: auto;
+  color: #aeb7c8;
+  font-size: 18px;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #35405a;
+  background: #141b2a;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: #6ea8fe;
+  color: #08101d;
+  border-color: #6ea8fe;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+section {
+  padding: 80px 0;
+  border-top: 1px solid #1d2433;
+}
+
+.section-title {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.section-description {
+  color: #9da8bb;
+  max-width: 700px;
+  margin-bottom: 35px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr;
+  gap: 35px;
+}
+
+.card {
+  background: #111725;
+  border: 1px solid #222c3f;
+  border-radius: 14px;
+  padding: 25px;
+}
+
+.card p {
+  color: #aeb7c8;
+}
+
+.info-list {
+  list-style: none;
+}
+
+.info-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #222b3b;
+  color: #cbd3e1;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  padding: 9px 13px;
+  background: #141c2b;
+  border: 1px solid #29344a;
+  border-radius: 7px;
+  color: #cbd4e4;
+  font-size: 14px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  background: #111725;
+  border: 1px solid #222c3f;
+  border-radius: 14px;
+  padding: 25px;
+  min-height: 230px;
+}
+
+.project-card h3 {
+  margin-bottom: 12px;
+}
+
+.project-card p {
+  color: #9da8bb;
+  font-size: 15px;
+}
+
+.project-tag {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 5px 9px;
+  border-radius: 5px;
+  background: #1b2537;
+  color: #8fb9ff;
+  font-size: 12px;
+}
+
+.career {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.tool-card {
+  background: #111725;
+  border: 1px solid #222c3f;
+  border-radius: 14px;
+  padding: 25px;
+}
+
+.tool-card h3 {
+  margin-bottom: 10px;
+}
+
+.tool-card p {
+  color: #9da8bb;
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 13px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #303b51;
+  background: #0b101b;
+  color: #fff;
+  font: inherit;
+}
+
+textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.contact-card {
+  padding: 22px;
+  background: #111725;
+  border: 1px solid #222c3f;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.contact-card h3 {
+  margin-bottom: 8px;
+}
+
+.contact-card p {
+  color: #9da8bb;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.contact-card:hover {
+  border-color: #6ea8fe;
+}
+
+footer {
+  border-top: 1px solid #202738;
+  padding: 30px 0;
+  text-align: center;
+  color: #7f8a9e;
+  font-size: 14px;
+}
+
+.status {
+  margin-top: 10px;
+  color: #8fb9ff;
+  font-size: 14px;
+}
+
+@media (max-width: 850px) {
+  .nav-links {
+    display: none;
+  }
+
+  .about-grid,
+  .career {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 80px 0 60px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-
-    <nav>
-        <div class="container nav-container">
-
-            <a href="#home" class="logo">
-                Estifanos<span>.</span>
-            </a>
-
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#career">Career</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-        </div>
-    </nav>
-
-
-    <!-- HERO -->
-
-    <section class="hero" id="home">
-
-        <div class="container hero-grid">
-
-            <div>
-
-                <div class="eyebrow">
-                    Full-Stack Developer · AI Automation
-                </div>
-
-                <h1>
-                    Building digital
-                    <span>systems</span>
-                    that work.
-                </h1>
-
-                <p class="hero-description">
-                    I'm Estifanos Fikadu, a Full-Stack Developer and
-                    AI Automation Specialist focused on modern web
-                    applications, intelligent workflows and practical
-                    AI-powered systems.
-                </p>
-
-                <div class="buttons">
-
-                    <a
-                        href="#career"
-                        class="button button-primary"
-                    >
-                        Explore My Career
-                    </a>
-
-                    <a
-                        href="#projects"
-                        class="button button-secondary"
-                    >
-                        View Projects
-                    </a>
-
-                    <a
-                        href="https://www.linkedin.com/"
-                        target="_blank"
-                        class="button button-secondary"
-                    >
-                        LinkedIn
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="profile-card">
-
-                <div class="avatar">
-                    EF
-                </div>
-
-                <h2>
-                    Estifanos Fikadu
-                </h2>
-
-                <p>
-                    Full-Stack Developer &
-                    AI Automation Specialist
-                </p>
-
-                <div class="available">
-                    <span class="dot"></span>
-                    Available for opportunities
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section id="about">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                About Me
-            </h2>
-
-            <p class="section-description">
-                A technology-focused professional combining software
-                development, artificial intelligence and automation.
-            </p>
-
-            <div class="about-grid">
-
-                <div class="about-text">
-
-                    <p>
-                        I build web applications and digital systems
-                        using modern technologies across frontend,
-                        backend and cloud environments.
-                    </p>
-
-                    <p>
-                        My interests include AI agents, workflow
-                        automation, full-stack development, UI/UX and
-                        practical AI-powered tools.
-                    </p>
-
-                    <p>
-                        I am open to remote employment, freelance
-                        projects and technology collaborations.
-                    </p>
-
-                </div>
-
-
-                <div class="facts">
-
-                    <div class="fact">
-                        <strong>Primary Focus</strong>
-                        <span>
-                            Full-Stack Development & AI
-                        </span>
-                    </div>
-
-                    <div class="fact">
-                        <strong>Specialization</strong>
-                        <span>
-                            AI Agents & Business Automation
-                        </span>
-                    </div>
-
-                    <div class="fact">
-                        <strong>Work Style</strong>
-                        <span>
-                            Remote · Freelance · Contract
-                        </span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SKILLS -->
-
-    <section id="skills">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                Technical Skills
-            </h2>
-
-            <p class="section-description">
-                Technologies and capabilities I work with.
-            </p>
-
-            <div class="skills">
-
-                <span class="skill">JavaScript</span>
-                <span class="skill">TypeScript</span>
-                <span class="skill">React</span>
-                <span class="skill">Next.js</span>
-                <span class="skill">Vue</span>
-                <span class="skill">HTML</span>
-                <span class="skill">CSS</span>
-                <span class="skill">Tailwind CSS</span>
-                <span class="skill">Node.js</span>
-                <span class="skill">REST APIs</span>
-                <span class="skill">GraphQL</span>
-                <span class="skill">Python</span>
-                <span class="skill">SQL</span>
-                <span class="skill">PostgreSQL</span>
-                <span class="skill">AI / LLM</span>
-                <span class="skill">AI Agents</span>
-                <span class="skill">Machine Learning</span>
-                <span class="skill">Figma</span>
-                <span class="skill">UI/UX</span>
-                <span class="skill">Docker</span>
-                <span class="skill">AWS</span>
-                <span class="skill">GCP</span>
-                <span class="skill">GitHub</span>
-                <span class="skill">CI/CD</span>
-                <span class="skill">Automation</span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-
-    <section id="projects">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                Projects
-            </h2>
-
-            <p class="section-description">
-                Selected development and AI projects.
-            </p>
-
-            <div class="projects">
-
-                <article class="project">
-
-                    <div class="project-number">
-                        01
-                    </div>
-
-                    <h3>
-                        AI Outreach Automation
-                    </h3>
-
-                    <p>
-                        AI-assisted prospect research, lead qualification,
-                        CRM workflows and personalized outreach automation.
-                    </p>
-
-                </article>
-
-
-                <article class="project">
-
-                    <div class="project-number">
-                        02
-                    </div>
-
-                    <h3>
-                        AI Career Assistant
-                    </h3>
-
-                    <p>
-                        A career platform designed to transform professional
-                        information into job-specific CVs and application
-                        documents.
-                    </p>
-
-                </article>
-
-
-                <article class="project">
-
-                    <div class="project-number">
-                        03
-                    </div>
-
-                    <h3>
-                        Full-Stack Applications
-                    </h3>
-
-                    <p>
-                        Responsive applications combining frontend interfaces,
-                        APIs, databases and backend services.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CAREER -->
-
-    <section id="career">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                Career Center
-            </h2>
-
-            <p class="section-description">
-                The future home of the website's intelligent CV and
-                job-application system.
-            </p>
-
-            <div class="career-box">
-
-                <h3>
-                    Build a CV for a specific job
-                </h3>
-
-                <p>
-                    Add your professional profile and a job description.
-                    The platform will eventually analyze the requirements
-                    and create a tailored CV, application letter and
-                    cover letter.
-                </p>
-
-                <a
-                    href="#career-tools"
-                    class="button button-primary"
-                >
-                    Start
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CAREER TOOLS -->
-
-    <section id="career-tools">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                Career Tools
-            </h2>
-
-            <p class="section-description">
-                Prepare your professional profile and target specific
-                job opportunities.
-            </p>
-
-
-            <div class="tools">
-
-                <!-- LINKEDIN -->
-
-                <div class="tool">
-
-                    <h3>
-                        LinkedIn Profile
-                    </h3>
-
-                    <p>
-                        Enter your LinkedIn profile URL.
-                    </p>
-
-                    <input
-                        type="url"
-                        id="linkedin"
-                        placeholder="https://www.linkedin.com/in/your-name"
-                    >
-
-                    <button
-                        class="button button-primary"
-                        onclick="saveLinkedIn()"
-                    >
-                        Save Profile
-                    </button>
-
-                    <div
-                        id="linkedinStatus"
-                        class="status"
-                    ></div>
-
-                </div>
-
-
-                <!-- JOB DESCRIPTION -->
-
-                <div class="tool">
-
-                    <h3>
-                        Target Job
-                    </h3>
-
-                    <p>
-                        Paste the job description you want to apply for.
-                    </p>
-
-                    <textarea
-                        id="job"
-                        placeholder="Paste the job description here..."
-                    ></textarea>
-
-                    <button
-                        class="button button-primary"
-                        onclick="saveJob()"
-                    >
-                        Save Job
-                    </button>
-
-                    <div
-                        id="jobStatus"
-                        class="status"
-                    ></div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact">
-
-        <div class="container contact">
-
-            <h2 class="section-title">
-                Let's Work Together
-            </h2>
-
-            <p>
-                Open to remote employment, freelance projects and
-                technology opportunities.
-            </p>
-
-            <div class="contact-buttons">
-
-                <a
-                    href="mailto:your-email@example.com"
-                    class="button button-primary"
-                >
-                    Email Me
-                </a>
-
-                <a
-                    href="https://www.linkedin.com/"
-                    target="_blank"
-                    class="button button-secondary"
-                >
-                    LinkedIn
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        © <span id="year"></span> Estifanos Fikadu
-
-    </footer>
-
-
-    <script>
-
-        // Current year
-
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
-
-
-        // Save LinkedIn profile
-
-        function saveLinkedIn() {
-
-            const value =
-                document.getElementById("linkedin").value.trim();
-
-            const status =
-                document.getElementById("linkedinStatus");
-
-            if (!value) {
-
-                status.style.color = "#f87171";
-
-                status.textContent =
-                    "Please enter your LinkedIn profile URL.";
-
-                return;
-            }
-
-            localStorage.setItem(
-                "linkedinProfile",
-                value
-            );
-
-            status.style.color = "#4ade80";
-
-            status.textContent =
-                "LinkedIn profile saved successfully.";
-        }
-
-
-        // Save job description
-
-        function saveJob() {
-
-            const value =
-                document.getElementById("job").value.trim();
-
-            const status =
-                document.getElementById("jobStatus");
-
-            if (!value) {
-
-                status.style.color = "#f87171";
-
-                status.textContent =
-                    "Please paste a job description.";
-
-                return;
-            }
-
-            localStorage.setItem(
-                "targetJob",
-                value
-            );
-
-            status.style.color = "#4ade80";
-
-            status.textContent =
-                "Job description saved successfully.";
-        }
-
-
-        // Load saved LinkedIn profile
-
-        const savedLinkedIn =
-            localStorage.getItem("linkedinProfile");
-
-        if (savedLinkedIn) {
-
-            document.getElementById("linkedin").value =
-                savedLinkedIn;
-        }
-
-    </script>
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">Estif<span>.</span></div>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#career">Career Center</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="badge">Available for Remote Work & Freelance Projects</div>
+
+    <h1>
+      Building digital systems<br>
+      that <span>work.</span>
+    </h1>
+
+    <p>
+      I'm <strong>Estifanos Fikadu</strong>, a Full-Stack Developer
+      and AI Automation Specialist focused on building modern web
+      applications, AI agents, automation systems and practical
+      digital solutions.
+    </p>
+
+    <div class="buttons">
+      <a class="btn primary"
+         href="https://www.linkedin.com/in/estefanos-gizaw-699509335"
+         target="_blank">
+        LinkedIn
+      </a>
+
+      <a class="btn"
+         href="https://github.com/estif75"
+         target="_blank">
+        GitHub
+      </a>
+
+      <a class="btn" href="#career">
+        Career Center
+      </a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+
+    <p class="section-description">
+      A technology-focused professional combining full-stack development,
+      UI/UX, artificial intelligence and business automation.
+    </p>
+
+    <div class="about-grid">
+
+      <div class="card">
+        <p>
+          I build digital products that combine useful interfaces,
+          reliable backend systems and intelligent automation.
+        </p>
+
+        <br>
+
+        <p>
+          My interests include full-stack web development, AI/LLM
+          integration, AI agents, CRM automation, API development,
+          database systems and tools that help businesses operate more
+          efficiently.
+        </p>
+
+        <br>
+
+        <p>
+          I am available for remote employment, freelance projects,
+          contract work and technology collaborations.
+        </p>
+      </div>
+
+      <div class="card">
+        <ul class="info-list">
+          <li><strong>Name:</strong> Estifanos Fikadu</li>
+          <li><strong>Focus:</strong> Full-Stack Development</li>
+          <li><strong>Specialty:</strong> AI Automation</li>
+          <li><strong>Work:</strong> Remote / Freelance</li>
+          <li><strong>GitHub:</strong> estif75</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+
+    <p class="section-description">
+      Technologies and capabilities I use to build applications,
+      automation systems and digital products.
+    </p>
+
+    <div class="skills">
+      <span class="skill">JavaScript</span>
+      <span class="skill">TypeScript</span>
+      <span class="skill">React</span>
+      <span class="skill">Next.js</span>
+      <span class="skill">Vue</span>
+      <span class="skill">HTML</span>
+      <span class="skill">CSS</span>
+      <span class="skill">Tailwind CSS</span>
+      <span class="skill">Node.js</span>
+      <span class="skill">Python</span>
+      <span class="skill">REST APIs</span>
+      <span class="skill">GraphQL</span>
+      <span class="skill">SQL</span>
+      <span class="skill">PostgreSQL</span>
+      <span class="skill">Supabase</span>
+      <span class="skill">AI / LLM</span>
+      <span class="skill">AI Agents</span>
+      <span class="skill">Machine Learning</span>
+      <span class="skill">Automation</span>
+      <span class="skill">Figma</span>
+      <span class="skill">UI/UX</span>
+      <span class="skill">Docker</span>
+      <span class="skill">AWS</span>
+      <span class="skill">GCP</span>
+      <span class="skill">GitHub</span>
+      <span class="skill">CI/CD</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects & Work</h2>
+
+    <p class="section-description">
+      Selected projects and systems demonstrating my technical and
+      automation capabilities.
+    </p>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+        <h3>AI Outreach Automation</h3>
+
+        <p>
+          An AI-powered outreach workflow designed to identify prospects,
+          manage leads and automate personalized business outreach.
+        </p>
+
+        <span class="project-tag">AI + CRM + Automation</span>
+      </div>
+
+      <div class="project-card">
+        <h3>AI Career Assistant</h3>
+
+        <p>
+          A career platform concept designed to analyze job descriptions,
+          match professional skills and generate tailored application
+          materials.
+        </p>
+
+        <span class="project-tag">AI + Career Technology</span>
+      </div>
+
+      <div class="project-card">
+        <h3>Full-Stack Applications</h3>
+
+        <p>
+          Modern web applications using frontend frameworks, APIs,
+          databases, authentication and cloud deployment.
+        </p>
+
+        <span class="project-tag">Full-Stack Development</span>
+      </div>
+
+      <div class="project-card">
+        <h3>Database & Backend Systems</h3>
+
+        <p>
+          Backend architecture, database design, authentication,
+          API integration and migration workflows.
+        </p>
+
+        <span class="project-tag">Backend + Database</span>
+      </div>
+
+      <div class="project-card">
+        <h3>Business Automation</h3>
+
+        <p>
+          Automated workflows connecting communication, CRM systems,
+          AI services and business processes.
+        </p>
+
+        <span class="project-tag">Automation</span>
+      </div>
+
+      <div class="project-card">
+        <h3>Professional Portfolio Platform</h3>
+
+        <p>
+          This website is being developed as both a professional portfolio
+          and an AI-powered career center.
+        </p>
+
+        <span class="project-tag">Live Project</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="career">
+  <div class="container">
+
+    <h2 class="section-title">Career Center</h2>
+
+    <p class="section-description">
+      Use this area to prepare applications for employment and freelance
+      opportunities. The current version stores your information locally
+      in your browser.
+    </p>
+
+    <div class="career">
+
+      <div class="tool-card">
+        <h3>My Professional Profile</h3>
+
+        <p>
+          Save your LinkedIn profile so it is ready when preparing
+          applications.
+        </p>
+
+        <input
+          id="linkedin"
+          type="url"
+          value="https://www.linkedin.com/in/estefanos-gizaw-699509335"
+          placeholder="LinkedIn profile URL">
+
+        <button class="btn primary" onclick="saveLinkedIn()">
+          Save Profile
+        </button>
+
+        <div id="linkedinStatus" class="status"></div>
+      </div>
+
+      <div class="tool-card">
+        <h3>Job Description</h3>
+
+        <p>
+          Paste a job description here. This will become the input for
+          the future AI job-matching and application system.
+        </p>
+
+        <textarea
+          id="jobDescription"
+          placeholder="Paste the job description here..."></textarea>
+
+        <button class="btn primary" onclick="saveJob()">
+          Save Job
+        </button>
+
+        <div id="jobStatus" class="status"></div>
+      </div>
+
+    </div>
+
+    <div class="card" style="margin-top:25px;">
+      <h3>Planned AI Career Tools</h3>
+
+      <br>
+
+      <p>
+        The next development stage will add:
+      </p>
+
+      <br>
+
+      <ul style="padding-left:20px; color:#aeb7c8;">
+        <li>Job description analysis</li>
+        <li>Skill-to-job matching</li>
+        <li>Tailored CV generation</li>
+        <li>Customized cover letter generation</li>
+        <li>Freelance proposal generation</li>
+        <li>Application preparation</li>
+        <li>Application tracking</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+
+    <h2 class="section-title">Contact</h2>
+
+    <p class="section-description">
+      For employment, freelance projects, technical collaboration or
+      business opportunities.
+    </p>
+
+    <div class="contact-grid">
+
+      <a class="contact-card"
+         href="mailto:estefanosfikadu7@gmail.com">
+        <h3>Email</h3>
+        <p>estefanosfikadu7@gmail.com</p>
+      </a>
+
+      <a class="contact-card"
+         href="https://wa.me/251948109576"
+         target="_blank">
+        <h3>WhatsApp</h3>
+        <p>+251 948 109 576</p>
+      </a>
+
+      <a class="contact-card"
+         href="https://www.linkedin.com/in/estefanos-gizaw-699509335"
+         target="_blank">
+        <h3>LinkedIn</h3>
+        <p>Estefanos Fikadu</p>
+      </a>
+
+      <a class="contact-card"
+         href="https://github.com/estif75"
+         target="_blank">
+        <h3>GitHub</h3>
+        <p>github.com/estif75</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> Estifanos Fikadu. All rights reserved.
+  </div>
+</footer>
+
+<script>
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+function saveLinkedIn() {
+  const value = document.getElementById("linkedin").value;
+
+  localStorage.setItem("linkedinProfile", value);
+
+  document.getElementById("linkedinStatus").textContent =
+    "LinkedIn profile saved.";
+}
+
+function saveJob() {
+  const value = document.getElementById("jobDescription").value;
+
+  localStorage.setItem("jobDescription", value);
+
+  document.getElementById("jobStatus").textContent =
+    "Job description saved.";
+}
+
+window.addEventListener("load", function() {
+
+  const linkedin =
+    localStorage.getItem("linkedinProfile");
+
+  const job =
+    localStorage.getItem("jobDescription");
+
+  if (linkedin) {
+    document.getElementById("linkedin").value = linkedin;
+  }
+
+  if (job) {
+    document.getElementById("jobDescription").value = job;
+  }
+
+});
+
+</script>
 
 </body>
-  </html>
+                                      </html>
