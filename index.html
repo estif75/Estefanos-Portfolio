@@ -1,20 +1,15 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-  <style>
-.profile-photo {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: none;
-  margin-bottom: 25px;
-}
-  </style>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Estifanos Fikadu | Full-Stack Developer & AI Automation Specialist</title>
-<meta name="description" content="Estifanos Gizaw — Full-Stack Developer and AI Automation Specialist building web applications, AI agents, automation systems and digital products.">
+
+<meta
+  name="description"
+  content="Estifanos Fikadu — Full-Stack Developer and AI Automation Specialist building web applications, AI agents, automation systems and digital products."
+>
 
 <style>
 * {
@@ -44,6 +39,8 @@ a {
   max-width: 1150px;
   margin: auto;
 }
+
+/* NAVIGATION */
 
 nav {
   position: sticky;
@@ -85,9 +82,20 @@ nav {
   color: #fff;
 }
 
+/* HERO */
+
 .hero {
   padding: 110px 0 90px;
   text-align: center;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: none;
+  margin-bottom: 25px;
 }
 
 .badge {
@@ -133,6 +141,8 @@ nav {
   background: #141b2a;
   color: #fff;
   font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
 }
 
 .btn.primary {
@@ -144,6 +154,8 @@ nav {
 .btn:hover {
   transform: translateY(-2px);
 }
+
+/* SECTIONS */
 
 section {
   padding: 80px 0;
@@ -161,13 +173,17 @@ section {
   margin-bottom: 35px;
 }
 
+/* ABOUT */
+
 .about-grid {
   display: grid;
   grid-template-columns: 1.4fr .8fr;
   gap: 35px;
 }
 
-.card {
+.card,
+.career-card,
+.tool-card {
   background: #111725;
   border: 1px solid #222c3f;
   border-radius: 14px;
@@ -188,6 +204,8 @@ section {
   color: #cbd3e1;
 }
 
+/* SKILLS */
+
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -202,6 +220,8 @@ section {
   color: #cbd4e4;
   font-size: 14px;
 }
+
+/* PROJECTS */
 
 .project-grid {
   display: grid;
@@ -236,26 +256,42 @@ section {
   font-size: 12px;
 }
 
+/* CAREER CENTER */
+
 .career {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
 }
 
-.tool-card {
-  background: #111725;
-  border: 1px solid #222c3f;
-  border-radius: 14px;
-  padding: 25px;
+.career-card {
+  margin-top: 30px;
 }
 
-.tool-card h3 {
-  margin-bottom: 10px;
+.career-card:first-of-type {
+  margin-top: 0;
 }
 
-.tool-card p {
-  color: #9da8bb;
-  margin-bottom: 20px;
+.career-card h3 {
+  margin-bottom: 18px;
+}
+
+.career-card h4 {
+  color: #8fb9ff;
+  margin-top: 22px;
+  margin-bottom: 6px;
+}
+
+.career-card p {
+  color: #aeb7c8;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 7px;
+  color: #cbd3e1;
+  font-weight: 600;
 }
 
 input,
@@ -270,10 +306,72 @@ textarea {
   font: inherit;
 }
 
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #6ea8fe;
+}
+
 textarea {
   min-height: 160px;
   resize: vertical;
 }
+
+.status {
+  margin-top: 10px;
+  color: #8fb9ff;
+  font-size: 14px;
+}
+
+.loading {
+  color: #8fb9ff;
+}
+
+.result-section {
+  padding: 18px;
+  margin-top: 15px;
+  background: #0c1220;
+  border: 1px solid #202b40;
+  border-radius: 10px;
+}
+
+.result-section p {
+  white-space: pre-wrap;
+}
+
+.result-list {
+  padding-left: 22px;
+  color: #cbd3e1;
+}
+
+.result-list li {
+  margin-bottom: 8px;
+}
+
+.analysis-header {
+  padding: 18px;
+  background: #141c2b;
+  border-radius: 10px;
+  border: 1px solid #29344a;
+}
+
+.analysis-header h3 {
+  margin-bottom: 5px;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.secondary {
+  background: #141b2a;
+  color: #fff;
+}
+
+/* CONTACT */
 
 .contact-grid {
   display: grid;
@@ -303,6 +401,8 @@ textarea {
   border-color: #6ea8fe;
 }
 
+/* FOOTER */
+
 footer {
   border-top: 1px solid #202738;
   padding: 30px 0;
@@ -311,13 +411,10 @@ footer {
   font-size: 14px;
 }
 
-.status {
-  margin-top: 10px;
-  color: #8fb9ff;
-  font-size: 14px;
-}
+/* MOBILE */
 
 @media (max-width: 850px) {
+
   .nav-links {
     display: none;
   }
@@ -337,6 +434,7 @@ footer {
 }
 
 @media (max-width: 500px) {
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -344,15 +442,28 @@ footer {
   .hero {
     padding: 80px 0 60px;
   }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .container {
+    width: 92%;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
+
 <nav>
   <div class="container nav-inner">
-    <div class="logo">Estif<span>.</span></div>
+
+    <div class="logo">
+      Estif<span>.</span>
+    </div>
 
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
@@ -361,19 +472,26 @@ footer {
       <li><a href="#career">Career Center</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
   </div>
 </nav>
 
-<header class="hero">
-  <div class="container">
-    <img
-  src="image_8bbcd314-2.png"
-  alt="Estifanos Fikadu"
-  class="profile-photo"
->>
 
-<div class="badge">Available for Remote Work & Freelance Projects</div>
-    <div class="badge">Available for Remote Work & Freelance Projects</div>
+<!-- HERO -->
+
+<header class="hero">
+
+  <div class="container">
+
+    <img
+      src="image_8bbcd314-2.png"
+      alt="Estifanos Fikadu"
+      class="profile-photo"
+    >
+
+    <div class="badge">
+      Available for Remote Work & Freelance Projects
+    </div>
 
     <h1>
       Building digital systems<br>
@@ -388,28 +506,45 @@ footer {
     </p>
 
     <div class="buttons">
-      <a class="btn primary"
-         href="https://www.linkedin.com/in/estefanos-gizaw-699509335"
-         target="_blank">
+
+      <a
+        class="btn primary"
+        href="https://www.linkedin.com/in/estefanos-gizaw-699509335"
+        target="_blank"
+        rel="noopener"
+      >
         LinkedIn
       </a>
 
-      <a class="btn"
-         href="https://github.com/estif75"
-         target="_blank">
+      <a
+        class="btn"
+        href="https://github.com/estif75"
+        target="_blank"
+        rel="noopener"
+      >
         GitHub
       </a>
 
       <a class="btn" href="#career">
         Career Center
       </a>
+
     </div>
+
   </div>
+
 </header>
 
+
+<!-- ABOUT -->
+
 <section id="about">
+
   <div class="container">
-    <h2 class="section-title">About Me</h2>
+
+    <h2 class="section-title">
+      About Me
+    </h2>
 
     <p class="section-description">
       A technology-focused professional combining full-stack development,
@@ -419,6 +554,7 @@ footer {
     <div class="about-grid">
 
       <div class="card">
+
         <p>
           I build digital products that combine useful interfaces,
           reliable backend systems and intelligent automation.
@@ -439,25 +575,58 @@ footer {
           I am available for remote employment, freelance projects,
           contract work and technology collaborations.
         </p>
+
       </div>
 
       <div class="card">
+
         <ul class="info-list">
-          <li><strong>Name:</strong> Estifanos Fikadu</li>
-          <li><strong>Focus:</strong> Full-Stack Development</li>
-          <li><strong>Specialty:</strong> AI Automation</li>
-          <li><strong>Work:</strong> Remote / Freelance</li>
-          <li><strong>GitHub:</strong> estif75</li>
+
+          <li>
+            <strong>Name:</strong>
+            Estifanos Fikadu
+          </li>
+
+          <li>
+            <strong>Focus:</strong>
+            Full-Stack Development
+          </li>
+
+          <li>
+            <strong>Specialty:</strong>
+            AI Automation
+          </li>
+
+          <li>
+            <strong>Work:</strong>
+            Remote / Freelance
+          </li>
+
+          <li>
+            <strong>GitHub:</strong>
+            estif75
+          </li>
+
         </ul>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
 
+
+<!-- SKILLS -->
+
 <section id="skills">
+
   <div class="container">
-    <h2 class="section-title">Skills</h2>
+
+    <h2 class="section-title">
+      Skills
+    </h2>
 
     <p class="section-description">
       Technologies and capabilities I use to build applications,
@@ -465,6 +634,7 @@ footer {
     </p>
 
     <div class="skills">
+
       <span class="skill">JavaScript</span>
       <span class="skill">TypeScript</span>
       <span class="skill">React</span>
@@ -491,13 +661,23 @@ footer {
       <span class="skill">GCP</span>
       <span class="skill">GitHub</span>
       <span class="skill">CI/CD</span>
+
     </div>
+
   </div>
+
 </section>
 
+
+<!-- PROJECTS -->
+
 <section id="projects">
+
   <div class="container">
-    <h2 class="section-title">Projects & Work</h2>
+
+    <h2 class="section-title">
+      Projects & Work
+    </h2>
 
     <p class="section-description">
       Selected projects and systems demonstrating my technical and
@@ -507,143 +687,242 @@ footer {
     <div class="project-grid">
 
       <div class="project-card">
-        <h3>AI Outreach Automation</h3>
+
+        <h3>
+          AI Outreach Automation
+        </h3>
 
         <p>
           An AI-powered outreach workflow designed to identify prospects,
           manage leads and automate personalized business outreach.
         </p>
 
-        <span class="project-tag">AI + CRM + Automation</span>
+        <span class="project-tag">
+          AI + CRM + Automation
+        </span>
+
       </div>
 
+
       <div class="project-card">
-        <h3>AI Career Assistant</h3>
+
+        <h3>
+          AI Career Assistant
+        </h3>
 
         <p>
-          A career platform concept designed to analyze job descriptions,
+          A career platform designed to analyze job descriptions,
           match professional skills and generate tailored application
           materials.
         </p>
 
-        <span class="project-tag">AI + Career Technology</span>
+        <span class="project-tag">
+          AI + Career Technology
+        </span>
+
       </div>
 
+
       <div class="project-card">
-        <h3>Full-Stack Applications</h3>
+
+        <h3>
+          Full-Stack Applications
+        </h3>
 
         <p>
           Modern web applications using frontend frameworks, APIs,
           databases, authentication and cloud deployment.
         </p>
 
-        <span class="project-tag">Full-Stack Development</span>
+        <span class="project-tag">
+          Full-Stack Development
+        </span>
+
       </div>
 
+
       <div class="project-card">
-        <h3>Database & Backend Systems</h3>
+
+        <h3>
+          Database & Backend Systems
+        </h3>
 
         <p>
           Backend architecture, database design, authentication,
           API integration and migration workflows.
         </p>
 
-        <span class="project-tag">Backend + Database</span>
+        <span class="project-tag">
+          Backend + Database
+        </span>
+
       </div>
 
+
       <div class="project-card">
-        <h3>Business Automation</h3>
+
+        <h3>
+          Business Automation
+        </h3>
 
         <p>
           Automated workflows connecting communication, CRM systems,
           AI services and business processes.
         </p>
 
-        <span class="project-tag">Automation</span>
+        <span class="project-tag">
+          Automation
+        </span>
+
       </div>
 
+
       <div class="project-card">
-        <h3>Professional Portfolio Platform</h3>
+
+        <h3>
+          Professional Portfolio Platform
+        </h3>
 
         <p>
           This website is being developed as both a professional portfolio
           and an AI-powered career center.
         </p>
 
-        <span class="project-tag">Live Project</span>
+        <span class="project-tag">
+          Live Project
+        </span>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
 
-<section id="career" class="section">
+
+<!-- CAREER CENTER -->
+
+<section id="career">
+
   <div class="container">
 
-    <div class="section-title">
-      <h2>Career Center</h2>
-      <p>Your professional profile and application workspace.</p>
-    </div>
+    <h2 class="section-title">
+      Career Center
+    </h2>
+
+    <p class="section-description">
+      Your professional profile and AI-powered application workspace.
+    </p>
+
 
     <!-- MASTER PROFILE -->
+
     <div class="career-card">
 
-      <h3>My Professional Profile</h3>
+      <h3>
+        My Professional Profile
+      </h3>
 
-      <label>Full Name</label>
+      <p>
+        Save your master professional information. The AI job analyzer
+        uses this information when preparing applications.
+      </p>
+
+
+      <label for="profileName">
+        Full Name
+      </label>
+
       <input
         type="text"
         id="profileName"
         value="Estifanos Fikadu"
       >
 
-      <label>Professional Title</label>
+
+      <label for="profileTitle">
+        Professional Title
+      </label>
+
       <input
         type="text"
         id="profileTitle"
         value="Full-Stack Developer & AI Automation Specialist"
       >
 
-      <label>Email</label>
+
+      <label for="profileEmail">
+        Email
+      </label>
+
       <input
         type="email"
         id="profileEmail"
         value="estefanosfikadu7@gmail.com"
       >
 
-      <label>WhatsApp</label>
+
+      <label for="profileWhatsapp">
+        WhatsApp
+      </label>
+
       <input
         type="text"
         id="profileWhatsapp"
         value="+251 948 109 576"
       >
 
-      <label>LinkedIn</label>
+
+      <label for="profileLinkedIn">
+        LinkedIn
+      </label>
+
       <input
         type="url"
         id="profileLinkedIn"
         value="https://www.linkedin.com/in/estefanos-gizaw-699509335"
       >
 
-      <label>GitHub</label>
+
+      <label for="profileGithub">
+        GitHub
+      </label>
+
       <input
         type="url"
         id="profileGithub"
         value="https://github.com/estif75"
       >
 
-      <label>Education</label>
+
+      <label for="profileEducation">
+        Education
+      </label>
+
       <textarea id="profileEducation">Admas University
 Accounting and Finance
 Graduated 2019</textarea>
 
-      <label>Professional Summary</label>
+
+      <label for="profileSummary">
+        Professional Summary
+      </label>
+
       <textarea id="profileSummary">Full-Stack Developer and AI Automation Specialist focused on building modern web applications, AI agents, automation systems, APIs, databases and practical digital solutions.</textarea>
 
-      <label>Technical Skills</label>
+
+      <label for="profileSkills">
+        Technical Skills
+      </label>
+
       <textarea id="profileSkills">JavaScript, TypeScript, React, Next.js, Vue, HTML, CSS, Tailwind CSS, Node.js, REST APIs, GraphQL, Python, SQL, PostgreSQL, Supabase, AI/LLM, AI Agents, Machine Learning, Figma, UI/UX, Docker, AWS, GCP, GitHub, CI/CD, Automation</textarea>
 
-      <label>Projects & Experience</label>
+
+      <label for="profileExperience">
+        Projects & Experience
+      </label>
+
       <textarea id="profileExperience">AI Outreach Automation
 AI Career Assistant
 Full-Stack Web Applications
@@ -651,25 +930,52 @@ Database & Backend Systems
 Business Automation
 Professional Portfolio Platform</textarea>
 
-      <button class="btn primary" onclick="saveProfile()">
-        Save Professional Profile
-      </button>
 
-      <p id="profileStatus"></p>
+      <div class="action-row">
+
+        <button
+          class="btn primary"
+          type="button"
+          onclick="saveProfile()"
+        >
+          Save Professional Profile
+        </button>
+
+        <button
+          class="btn secondary"
+          type="button"
+          onclick="loadProfile()"
+        >
+          Restore Saved Profile
+        </button>
+
+      </div>
+
+      <p
+        id="profileStatus"
+        class="status"
+      ></p>
 
     </div>
 
 
     <!-- JOB ANALYZER -->
-    <div class="career-card" style="margin-top:30px;">
 
-      <h3>Job Application Analyzer</h3>
+    <div class="career-card">
+
+      <h3>
+        AI Job Application Analyzer
+      </h3>
 
       <p>
-        Paste a job description to prepare a tailored application.
+        Paste a complete job description. The AI will analyze the
+        requirements against your saved professional profile.
       </p>
 
-      <label>Job Description</label>
+
+      <label for="jobDescription">
+        Job Description
+      </label>
 
       <textarea
         id="jobDescription"
@@ -677,28 +983,61 @@ Professional Portfolio Platform</textarea>
         style="min-height:250px;"
       ></textarea>
 
-      <div class="buttons" style="margin-top:20px;">
 
-        <button class="btn primary" onclick="analyzeJob()">
-          Analyze Job
+      <div class="action-row">
+
+        <button
+          class="btn primary"
+          type="button"
+          id="analyzeButton"
+          onclick="analyzeJob()"
+        >
+          Analyze Job with AI
         </button>
 
-        <button class="btn" onclick="clearJob()">
+        <button
+          class="btn secondary"
+          type="button"
+          onclick="saveJob()"
+        >
+          Save Job
+        </button>
+
+        <button
+          class="btn secondary"
+          type="button"
+          onclick="clearJob()"
+        >
           Clear
         </button>
 
       </div>
+
+
+      <p
+        id="jobStatus"
+        class="status"
+      ></p>
+
+
+      <!-- ANALYSIS RESULT -->
 
       <div
         id="jobAnalysis"
         style="margin-top:30px;"
       >
 
-        <h3>Analysis Results</h3>
+        <h3>
+          Analysis Results
+        </h3>
 
         <div id="jobResult">
-          Paste a job description and select
-          "Analyze Job" to begin.
+
+          <p>
+            Paste a job description and select
+            "Analyze Job with AI" to begin.
+          </p>
+
         </div>
 
       </div>
@@ -706,242 +1045,1114 @@ Professional Portfolio Platform</textarea>
     </div>
 
 
-    <!-- APPLICATION OUTPUTS -->
-    <div class="career-card" style="margin-top:30px;">
+    <!-- APPLICATION MATERIALS -->
 
-      <h3>Application Materials</h3>
+    <div class="career-card">
+
+      <h3>
+        Application Materials
+      </h3>
+
+      <p>
+        AI-generated application materials based on the specific
+        job description and your professional profile.
+      </p>
+
 
       <div id="applicationMaterials">
 
-        <p>
-          Your tailored application materials will appear here
-          after the job analysis.
-        </p>
+        <div class="result-section">
+
+          <h4>
+            Tailored CV Summary
+          </h4>
+
+          <p id="cvSummaryOutput">
+            Your tailored CV summary will appear here.
+          </p>
+
+        </div>
+
+
+        <div class="result-section">
+
+          <h4>
+            Cover Letter
+          </h4>
+
+          <p id="coverLetterOutput">
+            Your customized cover letter will appear here.
+          </p>
+
+        </div>
+
+
+        <div class="result-section">
+
+          <h4>
+            Recruiter Message
+          </h4>
+
+          <p id="recruiterMessageOutput">
+            Your recruiter message will appear here.
+          </p>
+
+        </div>
+
+
+        <div class="result-section">
+
+          <h4>
+            Interview Questions
+          </h4>
+
+          <ul
+            id="interviewQuestionsOutput"
+            class="result-list"
+          >
+            <li>
+              Interview questions will appear here.
+            </li>
+          </ul>
+
+        </div>
 
       </div>
 
     </div>
 
 
-    <!-- FUTURE TOOLS -->
-    <div class="career-card" style="margin-top:30px;">
+    <!-- CAREER TOOLS -->
 
-      <h3>Career Tools</h3>
+    <div class="career-card">
 
-      <ul>
-        <li>Job requirement analysis</li>
-        <li>Skill-to-job matching</li>
-        <li>Tailored CV generation</li>
-        <li>Customized cover letter</li>
-        <li>Freelance proposal generation</li>
-        <li>Recruiter message generation</li>
-        <li>Interview preparation</li>
-        <li>Application tracking</li>
+      <h3>
+        Career Tools
+      </h3>
+
+      <ul class="result-list">
+
+        <li>
+          Job requirement analysis
+        </li>
+
+        <li>
+          Skill-to-job matching
+        </li>
+
+        <li>
+          Tailored CV generation
+        </li>
+
+        <li>
+          Customized cover letter
+        </li>
+
+        <li>
+          Freelance proposal generation
+        </li>
+
+        <li>
+          Recruiter message generation
+        </li>
+
+        <li>
+          Interview preparation
+        </li>
+
+        <li>
+          Application tracking
+        </li>
+
       </ul>
 
     </div>
 
   </div>
+
 </section>
+
+
+<!-- CONTACT -->
+
 <section id="contact">
+
   <div class="container">
 
-    <h2 class="section-title">Contact</h2>
+    <h2 class="section-title">
+      Contact
+    </h2>
 
     <p class="section-description">
       For employment, freelance projects, technical collaboration or
       business opportunities.
     </p>
 
+
     <div class="contact-grid">
 
-      <a class="contact-card"
-         href="mailto:estefanosfikadu7@gmail.com">
-        <h3>Email</h3>
-        <p>estefanosfikadu7@gmail.com</p>
+      <a
+        class="contact-card"
+        href="mailto:estefanosfikadu7@gmail.com"
+      >
+
+        <h3>
+          Email
+        </h3>
+
+        <p>
+          estefanosfikadu7@gmail.com
+        </p>
+
       </a>
 
-      <a class="contact-card"
-         href="https://wa.me/251948109576"
-         target="_blank">
-        <h3>WhatsApp</h3>
-        <p>+251 948 109 576</p>
+
+      <a
+        class="contact-card"
+        href="https://wa.me/251948109576"
+        target="_blank"
+        rel="noopener"
+      >
+
+        <h3>
+          WhatsApp
+        </h3>
+
+        <p>
+          +251 948 109 576
+        </p>
+
       </a>
 
-      <a class="contact-card"
-         href="https://www.linkedin.com/in/estefanos-gizaw-699509335"
-         target="_blank">
-        <h3>LinkedIn</h3>
-        <p>Estefanos Fikadu</p>
+
+      <a
+        class="contact-card"
+        href="https://www.linkedin.com/in/estefanos-gizaw-699509335"
+        target="_blank"
+        rel="noopener"
+      >
+
+        <h3>
+          LinkedIn
+        </h3>
+
+        <p>
+          Estefanos Fikadu
+        </p>
+
       </a>
 
-      <a class="contact-card"
-         href="https://github.com/estif75"
-         target="_blank">
-        <h3>GitHub</h3>
-        <p>github.com/estif75</p>
+
+      <a
+        class="contact-card"
+        href="https://github.com/estif75"
+        target="_blank"
+        rel="noopener"
+      >
+
+        <h3>
+          GitHub
+        </h3>
+
+        <p>
+          github.com/estif75
+        </p>
+
       </a>
 
     </div>
+
   </div>
+
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
+
   <div class="container">
-    © <span id="year"></span> Estifanos Fikadu. All rights reserved.
+
+    ©
+    <span id="year"></span>
+    Estifanos Fikadu.
+    All rights reserved.
+
   </div>
+
 </footer>
-function saveProfile() {
+
+
+<!-- JAVASCRIPT -->
 
 <script>
+
+/* =========================================================
+   BASIC PAGE
+========================================================= */
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
-function saveLinkedIn() {
-  const value = document.getElementById("linkedin").value;
 
-  localStorage.setItem("linkedinProfile", value);
+/* =========================================================
+   MASTER PROFESSIONAL PROFILE
+========================================================= */
 
-  document.getElementById("linkedinStatus").textContent =
-    "LinkedIn profile saved.";
+function getProfileFromForm() {
+
+  return {
+
+    name:
+      document.getElementById("profileName").value.trim(),
+
+    title:
+      document.getElementById("profileTitle").value.trim(),
+
+    email:
+      document.getElementById("profileEmail").value.trim(),
+
+    whatsapp:
+      document.getElementById("profileWhatsapp").value.trim(),
+
+    linkedin:
+      document.getElementById("profileLinkedIn").value.trim(),
+
+    github:
+      document.getElementById("profileGithub").value.trim(),
+
+    education:
+      document.getElementById("profileEducation").value.trim(),
+
+    summary:
+      document.getElementById("profileSummary").value.trim(),
+
+    skills:
+      document.getElementById("profileSkills").value.trim(),
+
+    experience:
+      document.getElementById("profileExperience").value.trim()
+
+  };
+
 }
 
-function saveJob() {
-  const value = document.getElementById("jobDescription").value;
 
-  localStorage.setItem("jobDescription", value);
+function saveProfile() {
 
-  document.getElementById("jobStatus").textContent =
-    "Job description saved.";
+  const profile = getProfileFromForm();
+
+  localStorage.setItem(
+    "masterProfile",
+    JSON.stringify(profile)
+  );
+
+  document.getElementById("profileStatus").textContent =
+    "Professional profile saved successfully.";
+
 }
 
-window.addEventListener("load", function() {
 
-  const linkedin =
-    localStorage.getItem("linkedinProfile");
+function loadProfile() {
 
-  const job =
-    localStorage.getItem("jobDescription");
+  const savedProfile =
+    localStorage.getItem("masterProfile");
 
-  if (linkedin) {
-    document.getElementById("linkedin").value = linkedin;
-  }
+  if (!savedProfile) {
 
-  if (job) {
-    document.getElementById("jobDescription").value = job;
-  }
-async function analyzeJob() {
+    document.getElementById("profileStatus").textContent =
+      "No saved professional profile found.";
 
-  const jobDescription =
-    document.getElementById("jobDescription").value.trim();
-
-  if (!jobDescription) {
-    alert("Please paste a job description first.");
     return;
-  }
-
-  const profile =
-    JSON.parse(localStorage.getItem("masterProfile") || "{}");
-
-  const resultBox =
-    document.getElementById("jobResult");
-
-  if (resultBox) {
-    resultBox.innerHTML =
-      "<p>AI is analyzing the job description...</p>";
   }
 
   try {
 
-    const response = await fetch(
-      "https://shunmyrxozakhexnzuhj.supabase.co/functions/v1/dynamic-api",
-      {
-        method: "POST",
+    const profile =
+      JSON.parse(savedProfile);
 
-        headers: {
-          "Content-Type": "application/json"
-        },
 
-        body: JSON.stringify({
-          jobDescription: jobDescription,
-          profile: profile
-        })
-      }
-    );
+    if (profile.name !== undefined)
+      document.getElementById("profileName").value =
+        profile.name;
 
-    const result = await response.json();
 
-    if (!response.ok) {
-      throw new Error(
-        result.error || "AI analysis failed."
-      );
-    }
+    if (profile.title !== undefined)
+      document.getElementById("profileTitle").value =
+        profile.title;
 
-    localStorage.setItem(
-      "jobAnalysis",
-      JSON.stringify(result)
-    );
 
-    if (resultBox) {
+    if (profile.email !== undefined)
+      document.getElementById("profileEmail").value =
+        profile.email;
 
-      resultBox.innerHTML = `
-        <h3>${result.jobTitle || "Job Analysis"}</h3>
 
-        <h4>Company</h4>
-        <p>${result.company || "Not specified"}</p>
+    if (profile.whatsapp !== undefined)
+      document.getElementById("profileWhatsapp").value =
+        profile.whatsapp;
 
-        <h4>Summary</h4>
-        <p>${result.summary || ""}</p>
 
-        <h4>Matching Skills</h4>
-        <p>${(result.matchingSkills || []).join(", ")}</p>
+    if (profile.linkedin !== undefined)
+      document.getElementById("profileLinkedIn").value =
+        profile.linkedin;
 
-        <h4>Missing Skills</h4>
-        <p>${(result.missingSkills || []).join(", ")}</p>
 
-        <h4>Relevant Experience</h4>
-        <p>${(result.relevantExperience || []).join("<br>")}</p>
+    if (profile.github !== undefined)
+      document.getElementById("profileGithub").value =
+        profile.github;
 
-        <h4>Match Explanation</h4>
-        <p>${result.matchExplanation || ""}</p>
 
-        <h4>Tailored CV Summary</h4>
-        <p>${result.tailoredCVSummary || ""}</p>
+    if (profile.education !== undefined)
+      document.getElementById("profileEducation").value =
+        profile.education;
 
-        <h4>Cover Letter</h4>
-        <p>${result.coverLetter || ""}</p>
 
-        <h4>Recruiter Message</h4>
-        <p>${result.recruiterMessage || ""}</p>
+    if (profile.summary !== undefined)
+      document.getElementById("profileSummary").value =
+        profile.summary;
 
-        <h4>Interview Questions</h4>
 
-        <ul>
-          ${(result.interviewQuestions || [])
-            .map(question => `<li>${question}</li>`)
-            .join("")}
-        </ul>
-      `;
-    }
+    if (profile.skills !== undefined)
+      document.getElementById("profileSkills").value =
+        profile.skills;
+
+
+    if (profile.experience !== undefined)
+      document.getElementById("profileExperience").value =
+        profile.experience;
+
+
+    document.getElementById("profileStatus").textContent =
+      "Saved professional profile restored.";
 
   } catch (error) {
 
     console.error(error);
 
-    if (resultBox) {
-      resultBox.innerHTML = `
-        <p>
-          AI analysis failed:
-          ${error.message}
-        </p>
-      `;
+    document.getElementById("profileStatus").textContent =
+      "Saved profile could not be loaded.";
+
+  }
+
+}
+
+
+/* =========================================================
+   JOB STORAGE
+========================================================= */
+
+function saveJob() {
+
+  const value =
+    document.getElementById("jobDescription").value.trim();
+
+  localStorage.setItem(
+    "jobDescription",
+    value
+  );
+
+  document.getElementById("jobStatus").textContent =
+    "Job description saved.";
+
+}
+
+
+function clearJob() {
+
+  document.getElementById("jobDescription").value = "";
+
+  document.getElementById("jobResult").innerHTML = `
+    <p>
+      Paste a job description and select
+      "Analyze Job with AI" to begin.
+    </p>
+  `;
+
+  document.getElementById("jobStatus").textContent =
+    "";
+
+  document.getElementById("cvSummaryOutput").textContent =
+    "Your tailored CV summary will appear here.";
+
+  document.getElementById("coverLetterOutput").textContent =
+    "Your customized cover letter will appear here.";
+
+  document.getElementById("recruiterMessageOutput").textContent =
+    "Your recruiter message will appear here.";
+
+  document.getElementById("interviewQuestionsOutput").innerHTML =
+    "<li>Interview questions will appear here.</li>";
+
+  localStorage.removeItem("jobDescription");
+  localStorage.removeItem("jobAnalysis");
+
+}
+
+
+/* =========================================================
+   SAFE HTML ESCAPING
+========================================================= */
+
+function escapeHTML(value) {
+
+  if (value === null || value === undefined) {
+    return "";
+  }
+
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+}
+
+
+/* =========================================================
+   ARRAY HELPER
+========================================================= */
+
+function formatArray(items) {
+
+  if (!Array.isArray(items) || items.length === 0) {
+
+    return `
+      <p>
+        None specified.
+      </p>
+    `;
+
+  }
+
+  return `
+    <ul class="result-list">
+      ${items
+        .map(item => `
+          <li>${escapeHTML(item)}</li>
+        `)
+        .join("")}
+    </ul>
+  `;
+
+}
+
+
+/* =========================================================
+   AI JOB ANALYZER
+========================================================= */
+
+async function analyzeJob() {
+
+  const jobDescription =
+    document
+      .getElementById("jobDescription")
+      .value
+      .trim();
+
+
+  if (!jobDescription) {
+
+    alert(
+      "Please paste a job description first."
+    );
+
+    return;
+  }
+
+
+  /*
+    Make sure the latest profile is saved before
+    sending it to the AI.
+  */
+
+  saveProfile();
+
+
+  const profile =
+    JSON.parse(
+      localStorage.getItem("masterProfile") || "{}"
+    );
+
+
+  const resultBox =
+    document.getElementById("jobResult");
+
+
+  const analyzeButton =
+    document.getElementById("analyzeButton");
+
+
+  analyzeButton.disabled = true;
+
+  analyzeButton.textContent =
+    "Analyzing...";
+
+
+  resultBox.innerHTML = `
+    <div class="result-section">
+
+      <p class="loading">
+        AI is analyzing the job description
+        against your professional profile...
+      </p>
+
+    </div>
+  `;
+
+
+  try {
+
+    /*
+      Supabase Edge Function
+    */
+
+    const response = await fetch(
+
+      "https://shunmyrxozakhexnzuhj.supabase.co/functions/v1/dynamic-api",
+
+      {
+
+        method: "POST",
+
+        headers: {
+
+          "Content-Type":
+            "application/json"
+
+        },
+
+        body: JSON.stringify({
+
+          jobDescription:
+            jobDescription,
+
+          profile:
+            profile
+
+        })
+
+      }
+
+    );
+
+
+    let result;
+
+
+    try {
+
+      result =
+        await response.json();
+
+    } catch (jsonError) {
+
+      throw new Error(
+        "The AI service returned an invalid response."
+      );
+
     }
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        result.error ||
+        result.message ||
+        "AI analysis failed."
+      );
+
+    }
+
+
+    /*
+      Some API implementations return the actual
+      result inside a nested property.
+    */
+
+    if (
+      result &&
+      result.data &&
+      typeof result.data === "object"
+    ) {
+
+      result =
+        result.data;
+
+    }
+
+
+    localStorage.setItem(
+
+      "jobAnalysis",
+
+      JSON.stringify(result)
+
+    );
+
+
+    /*
+      JOB ANALYSIS
+    */
+
+    resultBox.innerHTML = `
+
+      <div class="analysis-header">
+
+        <h3>
+          ${escapeHTML(
+            result.jobTitle ||
+            "Job Analysis"
+          )}
+        </h3>
+
+        <p>
+          <strong>Company:</strong>
+          ${escapeHTML(
+            result.company ||
+            "Not specified"
+          )}
+        </p>
+
+      </div>
+
+
+      <div class="result-section">
+
+        <h4>
+          Job Summary
+        </h4>
+
+        <p>
+          ${escapeHTML(
+            result.summary ||
+            "No summary returned."
+          )}
+        </p>
+
+      </div>
+
+
+      <div class="result-section">
+
+        <h4>
+          Required Skills
+        </h4>
+
+        ${formatArray(
+          result.requiredSkills
+        )}
+
+      </div>
+
+
+      <div class="result-section">
+
+        <h4>
+          Matching Skills
+        </h4>
+
+        ${formatArray(
+          result.matchingSkills
+        )}
+
+      </div>
+
+
+      <div class="result-section">
+
+        <h4>
+          Missing Skills
+        </h4>
+
+        ${formatArray(
+          result.missingSkills
+        )}
+
+      </div>
+
+
+      <div class="result-section">
+
+        <h4>
+          Relevant Experience
+        </h4>
+
+        ${formatArray(
+          result.relevantExperience
+        )}
+
+      </div>
+
+
+      <div class="result-section">
+
+        <h4>
+          Match Explanation
+        </h4>
+
+        <p>
+          ${escapeHTML(
+            result.matchExplanation ||
+            "No explanation returned."
+          )}
+        </p>
+
+      </div>
+
+    `;
+
+
+    /*
+      APPLICATION MATERIALS
+    */
+
+    document.getElementById(
+      "cvSummaryOutput"
+    ).textContent =
+      result.tailoredCVSummary ||
+      "No tailored CV summary was returned.";
+
+
+    document.getElementById(
+      "coverLetterOutput"
+    ).textContent =
+      result.coverLetter ||
+      "No cover letter was returned.";
+
+
+    document.getElementById(
+      "recruiterMessageOutput"
+    ).textContent =
+      result.recruiterMessage ||
+      "No recruiter message was returned.";
+
+
+    const interviewQuestions =
+      document.getElementById(
+        "interviewQuestionsOutput"
+      );
+
+
+    if (
+      Array.isArray(
+        result.interviewQuestions
+      ) &&
+      result.interviewQuestions.length > 0
+    ) {
+
+      interviewQuestions.innerHTML =
+        result.interviewQuestions
+          .map(question => `
+            <li>
+              ${escapeHTML(question)}
+            </li>
+          `)
+          .join("");
+
+    } else {
+
+      interviewQuestions.innerHTML =
+        "<li>No interview questions returned.</li>";
+
+    }
+
+
+    document.getElementById(
+      "jobStatus"
+    ).textContent =
+      "AI analysis completed successfully.";
+
+
+  } catch (error) {
+
+    console.error(
+      "Career Center AI error:",
+      error
+    );
+
+
+    resultBox.innerHTML = `
+
+      <div class="result-section">
+
+        <h4>
+          AI Analysis Error
+        </h4>
+
+        <p>
+          ${escapeHTML(
+            error.message ||
+            "Something went wrong while analyzing the job."
+          )}
+        </p>
+
+      </div>
+
+    `;
+
+
+    document.getElementById(
+      "jobStatus"
+    ).textContent =
+      "AI analysis failed. Check the Supabase function logs.";
+
   }
+
+
+  analyzeButton.disabled = false;
+
+  analyzeButton.textContent =
+    "Analyze Job with AI";
+
+}
+
+
+/* =========================================================
+   RESTORE SAVED DATA WHEN PAGE LOADS
+========================================================= */
+
+window.addEventListener(
+  "DOMContentLoaded",
+  function() {
+
+    /*
+      Restore professional profile
+      without overwriting the HTML defaults
+      if nothing has been saved.
+    */
+
+    const savedProfile =
+      localStorage.getItem(
+        "masterProfile"
+      );
+
+
+    if (savedProfile) {
+
+      loadProfile();
+
+    }
+
+
+    /*
+      Restore saved job description.
+    */
+
+    const savedJob =
+      localStorage.getItem(
+        "jobDescription"
+      );
+
+
+    if (savedJob) {
+
+      document.getElementById(
+        "jobDescription"
+      ).value =
+        savedJob;
+
+    }
+
+
+    /*
+      Restore previous AI analysis.
+    */
+
+    const savedAnalysis =
+      localStorage.getItem(
+        "jobAnalysis"
+      );
+
+
+    if (savedAnalysis) {
+
+      try {
+
+        const result =
+          JSON.parse(
+            savedAnalysis
+          );
+
+
+        /*
+          Restore analysis summary.
+        */
+
+        document.getElementById(
+          "jobResult"
+        ).innerHTML = `
+
+          <div class="analysis-header">
+
+            <h3>
+              ${escapeHTML(
+                result.jobTitle ||
+                "Saved Job Analysis"
+              )}
+            </h3>
+
+            <p>
+              <strong>Company:</strong>
+              ${escapeHTML(
+                result.company ||
+                "Not specified"
+              )}
+            </p>
+
+          </div>
+
+
+          <div class="result-section">
+
+            <h4>
+              Job Summary
+            </h4>
+
+            <p>
+              ${escapeHTML(
+                result.summary ||
+                ""
+              )}
+            </p>
+
+          </div>
+
+
+          <div class="result-section">
+
+            <h4>
+              Required Skills
+            </h4>
+
+            ${formatArray(
+              result.requiredSkills
+            )}
+
+          </div>
+
+
+          <div class="result-section">
+
+            <h4>
+              Matching Skills
+            </h4>
+
+            ${formatArray(
+              result.matchingSkills
+            )}
+
+          </div>
+
+
+          <div class="result-section">
+
+            <h4>
+              Missing Skills
+            </h4>
+
+            ${formatArray(
+              result.missingSkills
+            )}
+
+          </div>
+
+
+          <div class="result-section">
+
+            <h4>
+              Relevant Experience
+            </h4>
+
+            ${formatArray(
+              result.relevantExperience
+            )}
+
+          </div>
+
+
+          <div class="result-section">
+
+            <h4>
+              Match Explanation
+            </h4>
+
+            <p>
+              ${escapeHTML(
+                result.matchExplanation ||
+                ""
+              )}
+            </p>
+
+          </div>
+
+        `;
+
+
+        /*
+          Restore application materials.
+        */
+
+        document.getElementById(
+          "cvSummaryOutput"
+        ).textContent =
+          result.tailoredCVSummary ||
+          "No saved CV summary.";
+
+
+        document.getElementById(
+          "coverLetterOutput"
+        ).textContent =
+          result.coverLetter ||
+          "No saved cover letter.";
+
+
+        document.getElementById(
+          "recruiterMessageOutput"
+        ).textContent =
+          result.recruiterMessage ||
+          "No saved recruiter message.";
+
+
+        const questions =
+          document.getElementById(
+            "interviewQuestionsOutput"
+          );
+
+
+        if (
+          Array.isArray(
+            result.interviewQuestions
+          ) &&
+          result.interviewQuestions.length
+        ) {
+
+          questions.innerHTML =
+            result.interviewQuestions
+              .map(question => `
+                <li>
+                  ${escapeHTML(question)}
+                </li>
+              `)
+              .join("");
+
+        }
+
+      } catch (error) {
+
+        console.error(
+          "Could not restore saved analysis:",
+          error
+        );
+
+      }
+
+    }
+
   }
-});
+);
 
 </script>
 
 </body>
-                                      </html>
+  </html>
