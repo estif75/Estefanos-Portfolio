@@ -705,7 +705,24 @@ footer {
     © <span id="year"></span> Estifanos Fikadu. All rights reserved.
   </div>
 </footer>
+function saveProfile() {
+  const profile = {
+    name: document.getElementById("profileName").value,
+    title: document.getElementById("profileTitle").value,
+    email: document.getElementById("profileEmail").value,
+    linkedin: document.getElementById("profileLinkedIn").value,
+    github: document.getElementById("profileGithub").value,
+    education: document.getElementById("profileEducation").value,
+    summary: document.getElementById("profileSummary").value,
+    skills: document.getElementById("profileSkills").value,
+    experience: document.getElementById("profileExperience").value
+  };
 
+  localStorage.setItem("masterProfile", JSON.stringify(profile));
+
+  document.getElementById("profileStatus").textContent =
+    "Professional profile saved successfully.";
+}
 <script>
 
 document.getElementById("year").textContent =
