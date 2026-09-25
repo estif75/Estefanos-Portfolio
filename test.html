@@ -30,10 +30,13 @@ async function runTest() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "apikey": " curl"
+          "apikey": " https://shunmyrxozakhexnzuhj.supabase.co/functions/v1/dynamic-function' \
+  -H 'Authorization: Bearer sb_publishable_Kwnb2ko_cx6oQiSurBPoWw_zMFAlO1H' \
+  -H 'apikey: sb_publishable_Kwnb2ko_cx6oQiSurBPoWw_zMFAlO1H' \
+  -H 'Content-Type: application/json' \
+  --data '{"name":"Functions"}'"
         },
-        body: JSON.stringify({
-          jobDescription: document.getElementById("job").value,
+        body: JSON.strifunctions v1      jobDescription: document.getElementById("job").value,
           profile: { name: "Estifanos", title: "Full-Stack Developer", skills: "JavaScript, React, Node.js" }
         })
       }
